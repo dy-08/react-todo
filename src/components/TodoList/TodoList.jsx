@@ -8,7 +8,6 @@ export default function TodoList({ filter }) {
     { id: '123', text: '장보기', status: 'active' },
     { id: '124', text: '공부하기', status: 'active' },
   ]);
-
   const handleAdd = (todo) => setTodos([...todos, todo]);
   const handleUpdate = (updated) =>
     setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
@@ -16,6 +15,7 @@ export default function TodoList({ filter }) {
     setTodos(todos.filter((t) => t.id !== deleted.id));
 
   const filtered = getFilteredItems(todos, filter);
+
   return (
     <section className={styles.container}>
       <ul className={styles.list}>
